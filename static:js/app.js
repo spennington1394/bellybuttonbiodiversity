@@ -77,7 +77,10 @@ function init(){
   var sample = dataset[0];
   charts(sample);
   buildData(sample1);
-  
+function optionChange(newData){
+  buildChart(newData);
+  plotting(newData);
+}
 }
 
 
