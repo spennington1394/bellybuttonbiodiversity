@@ -14,11 +14,10 @@ function buildData(sample) {
    Object.defineProperties(results).forEach(([key,value] => 
     metadata_panel.append("p").text(`${key}:${value}`);
    );
-  });
+  );
 }
 // Function to build chart
-// removed arrow after sampledata closed parenthesis
-function charts(sample){
+function charts(sample){ =>
   d3.json("samples.json").then(sampledata)
     var samples = sampledata.samples;
     var results = array [0];
