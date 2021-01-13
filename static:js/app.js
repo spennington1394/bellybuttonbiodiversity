@@ -1,11 +1,11 @@
 
+
 function buildData(sample) {
   d3.json("samples.json").then(sampledata =>{
           console.log(sampledata);
        })
    var metadata = sampledata.metadata;
    var results = array[0];
-   //make sure # element is correct in index.html
    var metadata_panel = d3.select("#sample-metadata");
    metadata_panel.html("");
    // removed curly brackets from after the arrow function because was receiving a
