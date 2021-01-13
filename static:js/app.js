@@ -13,7 +13,23 @@ function buildData(sample) {
    });
   });
 }
-// Function 
+// Function to build chart
+
+function charts(sample){
+  d3.json("samples.json").then(sampledata) => {
+    var samples = sampledata.samples;
+    var results = array [0];
+    var ot_ids = results.otu_ids;
+    var ot_labels = results.otu_labels;
+    var sample_vals = results.sample_values;
+    
+    //Bubble chart
+    var layoutBubble = {
+      title: 'Bacteria Cultures Per Sample',
+      
+    }
+  }
+}
 
         
    
