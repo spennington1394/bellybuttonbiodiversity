@@ -8,9 +8,12 @@ function buildData(sample) {
    //make sure # element is correct in index.html
    var metadata_panel = d3.select("#sample-metadata");
    metadata_panel.html("");
-   Object.defineProperties(results).forEach(([key,value]=>{
-     metadata_panel.append("p").text(`${key}:${value}`);
-   });
+   // removed curly brackets from after the arrow function because was receiving a
+   // parameter list error
+   //removing curly brackets after arrow function. now have issue with same error but in line 14
+   Object.defineProperties(results).forEach(([key,value] => 
+    metadata_panel.append("p").text(`${key}:${value}`);
+   );
   });
 }
 // Function to build chart
@@ -61,11 +64,6 @@ function charts(sample){
   };
 };
 
-        
-   
 
-    
-    var ids = sampledata.samples[0].otu_ids
-    console.log(ids);
 
 
