@@ -26,8 +26,22 @@ function charts(sample){
     //Bubble chart
     var layoutBubble = {
       title: 'Bacteria Cultures Per Sample',
-      
-    }
+      xaxis: {title: 'OTU ID'},
+      // may need to add margin and font
+    };
+    var dataBubble = [{
+      x: ot_ids,
+      y: sample_vals,
+      text: otu_labels,
+      mode: 'markers',
+      marker:{
+        size: sample_vals,
+        color: ot_ids,
+        colorscale: 'Viridis'
+      }
+    }];
+
+    
   }
 }
 
