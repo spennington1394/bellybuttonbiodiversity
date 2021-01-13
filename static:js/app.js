@@ -41,9 +41,25 @@ function charts(sample){
       }
     }];
 
-    
-  }
-}
+    Plotly.newPlot('bubble',layoutBubble,dataBubble);
+
+    //horizontal bar chart 
+
+    var yTicks = ot_ids.slice(0,10).map(otuName => `Otu ${otuName}`).reverse();
+    var dataHorizontal = [{
+      y: yTicks,
+      x: sample_vals.slice(0,10).reverse(),
+      text: ot_labels.slice(0,10).reverse(),
+      type:'bar',
+      orientation: 'h'
+    }];
+    // may need to add margin and font
+    var layoutHorizontal = {
+      title: 'Top 10 OTUs Found in Individual',
+    };
+    Plotly.newPlot('bar',layoutHorizontal,dataHorizontal);
+  };
+};
 
         
    
