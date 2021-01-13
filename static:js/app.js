@@ -7,7 +7,7 @@ function buildData(sample) {
    var metadata = sampledata.metadata;
    var results = array[0];
    var metadata_panel = d3.select("#sample-metadata");
-   metadata_panel.html("");
+   metadata_panel.html(" ");
    // removed curly brackets from after the arrow function because was receiving a
    // parameter list error
    //removing curly brackets after arrow function. now have issue with same error but in line 14
@@ -63,6 +63,22 @@ function charts(sample){ =>
   };
 };
 
+
+function init(){
+  var dropdown = d3.select("#selDataset");
+  d3.json('samples.json').then((data)=>{
+    var dataset = data.names =>{
+      dropdown
+      .append('option'),
+      .text(id),
+      .property('value', id);
+    }
+  });
+  var sample = dataset[0];
+  charts(sample);
+  buildData(sample1);
+  
+}
 
 
 
